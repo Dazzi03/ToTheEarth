@@ -87,7 +87,7 @@ public class PlayerController : MonoBehaviour
 
         //applico il movimento
         transform.Translate(movementVector * speed * Time.deltaTime);
-        transform.position = new Vector3(transform.position.x, Mathf.Clamp(transform.position.y, -10, 13), transform.position.z);
+        transform.position = new Vector3(transform.position.x, Mathf.Clamp(transform.position.y, -7, 13), transform.position.z);
 
         if (ShootCountdown>0)
         {

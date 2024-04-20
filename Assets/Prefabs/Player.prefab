@@ -106,7 +106,7 @@ MonoBehaviour:
   score: 0
   FirePoint: {fileID: 8798550176049692965}
   bullet: {fileID: 53151778865478209, guid: 31982123001b495429eb47dc5a5a3085, type: 3}
-  ShootTime: 0.4
+  ShootTime: 0.3
   maxHealth: 3
   currentHealth: 3
   healthContainer: {fileID: 0}
@@ -115,7 +115,7 @@ MonoBehaviour:
   shieldIcon: {fileID: 8102197966758905032}
   shieldTimer: 0
   shieldTime: 5
-  shieldCooldown: 20
+  shieldCooldown: 10
   isShieldActive: 1
 --- !u!50 &176937591038387968
 Rigidbody2D:
