@@ -4,18 +4,25 @@ using UnityEngine;
 
 public class BlackHole : MonoBehaviour
 {
+    //METEORS
     private float meteorTimer = 0;
     public float meteorTime = 1;
     public float minMeteorTime = 0.5f, maxMeteorTime = 2f;
     public EnemyBullet meteorPrefab;
+
+    //MOVEMENT
     public GameObject pointA;
     public GameObject pointB;
     private Rigidbody2D rb;
     private Transform currentPoint;
     public float speed;
+
+    //HEALTH
     public int maxHealth = 20;
     public int currentHealth;
     public bool blackHole;
+
+    //WHEN PAUSED
     private PauseMenu pauseMenu;
 
     // Start is called before the first frame update
@@ -24,10 +31,13 @@ public class BlackHole : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         currentPoint = pointB.transform;
         currentHealth = maxHealth;
+
         pauseMenu = FindObjectOfType<PauseMenu>();
     }
 
     public void TakeDamage(int amount)
+
+        //BLACK HOLE DEATH
     {
         currentHealth -= amount;
         if (currentHealth <= 0)
@@ -44,11 +54,11 @@ public class BlackHole : MonoBehaviour
         if (pauseMenu.IsPaused == true) 
         {
             rb.velocity = Vector2.zero;
-            return; 
+            return;
         }
 
+        //BLACK HOLE MOVEMENT
         {
-
             Vector2 point = currentPoint.position - transform.position;
             if (currentPoint == pointB.transform)
             {
@@ -69,6 +79,7 @@ public class BlackHole : MonoBehaviour
                 currentPoint = pointB.transform;
             }
 
+            //METEORS SPAWN
             if (meteorTimer >= meteorTime)
             {
                 meteorTimer = 0;

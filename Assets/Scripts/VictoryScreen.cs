@@ -6,13 +6,17 @@ using UnityEngine;
 public class VictoryScreen : MonoBehaviour
 {
     public GameObject victoryScreen;
+    public static bool victoryCondition;
+    private PauseMenu pauseMenu;
+
+    //Earth
     public GameObject Earth;
     private GameObject SpawnedEarth;
     public Vector3 earthPositionStart;
     public Vector3 earthPositionEnd;
     public float speed;
-    private PauseMenu pauseMenu;
-    public static bool victoryCondition;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -28,19 +32,21 @@ public class VictoryScreen : MonoBehaviour
         
     }
 
+    //VICTORY SCREEN
     public void activateVictoryScreen() 
     {
         victoryScreen.SetActive(true);
         pauseMenu.IsPaused = true;
         victoryCondition = true;
         
+        //Destroy all EnemyBullets in Scene
         EnemyBullet[] enemybullets = FindObjectsOfType<EnemyBullet>();
         for (int i = 0; i < enemybullets.Length; i++)
         {
             Destroy(enemybullets[i].gameObject);
         }
         
-        //MOVIMENTO TERRA
+        //EARTH MOVEMENT
         SpawnedEarth = Instantiate(Earth, earthPositionStart, Quaternion.identity);
         StartCoroutine(MoveTheThing());
     }

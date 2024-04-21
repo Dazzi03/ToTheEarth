@@ -11,6 +11,8 @@ public class EnemyBullet : MonoBehaviour
     public int damage = 1;
     private PauseMenu pauseMenu;
 
+
+    //METEOR HEALTH
     void Awake()
     {
         health = 2;
@@ -18,6 +20,8 @@ public class EnemyBullet : MonoBehaviour
     }
     // Start is called before the first frame update
     void Start()
+
+    //DIRECTION
     {
         SetDireciton(Vector2.left);
         pauseMenu = FindObjectOfType<PauseMenu>();
@@ -29,20 +33,16 @@ public class EnemyBullet : MonoBehaviour
     }
 
 
-
-
     // Update is called once per frame
     void Update()
     {
         if (pauseMenu.IsPaused == true) return;
 
+        //DESTROY METEORS (WHEN GOING OUTSIDE THE SCREEN)
         if (isReady)
-
         {
             Vector2 position = transform.position;
-
             position += _direction * speed * Time.deltaTime;
-
             transform.position = position;
 
             Vector2 min = Camera.main.ViewportToWorldPoint(new Vector2(0, 0));
@@ -58,6 +58,7 @@ public class EnemyBullet : MonoBehaviour
         }
     }
 
+    //DESTROY METEORS (WITH PLAYER'S PROJECTILE)
     public void TakeDamage ()
     {
         health--;

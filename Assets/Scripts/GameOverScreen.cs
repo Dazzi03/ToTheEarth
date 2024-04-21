@@ -13,6 +13,7 @@ public class GameOverScreen : MonoBehaviour
     {
         gameoverScreen.SetActive(false);
         gameoverCondition = false;
+
         pauseMenu = FindObjectOfType<PauseMenu>();
     }
 
@@ -21,12 +22,15 @@ public class GameOverScreen : MonoBehaviour
     {
 
     }
+
+    //GAME-OVER SCREEN: ON
     public void activateGameOverScreen()
     {
         gameoverScreen.SetActive(true);
         pauseMenu.IsPaused = true;
         gameoverCondition = true;
 
+        //DESTROY ALL METEORS ON SCREEN IF PRESENT
         EnemyBullet[] enemybullets = FindObjectsOfType<EnemyBullet>();
         for (int i = 0; i < enemybullets.Length; i++)
         {

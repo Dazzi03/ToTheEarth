@@ -5,12 +5,19 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
+    //Speed
     public float speed;
+
+    //Score
     public int score = 0;
+
+    //Shooting
     public Transform FirePoint;
     public GameObject bullet;
     private float ShootCountdown;
     public float ShootTime;
+
+    //Menù
     private PauseMenu pauseMenu;
     private GameOverScreen gameoverScreen;
 
@@ -37,12 +44,12 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         ShootCountdown = 0;
-        MyFunction(3);
         currentHealth = maxHealth;
 
         animator = GetComponent<Animator>();
         collider2D = GetComponent<Collider2D>();
 
+        //Shield
         shieldTimer = -1;
         isShieldActive = false;
         shieldIcon.gameObject.SetActive(false);
@@ -62,6 +69,7 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
+        //player HIT animation & GAMEOVER
         StartCoroutine(FlickererRB());
         currentHealth -= amount;
         if (currentHealth <= 0)
@@ -89,6 +97,7 @@ public class PlayerController : MonoBehaviour
         transform.Translate(movementVector * speed * Time.deltaTime);
         transform.position = new Vector3(transform.position.x, Mathf.Clamp(transform.position.y, -7, 13), transform.position.z);
 
+        //SHOOTING METHOD
         if (ShootCountdown>0)
         {
             ShootCountdown -= Time.deltaTime;
@@ -102,6 +111,7 @@ public class PlayerController : MonoBehaviour
             ShootCountdown = ShootTime;
         }
         
+        //SHIELD
         if (!isShieldActive && shieldTimer <= 0 && Input.GetKey(KeyCode.LeftArrow))
         {
             isShieldActive = true;
@@ -109,6 +119,7 @@ public class PlayerController : MonoBehaviour
             shieldIcon.gameObject.SetActive(true);
         }
         
+        //Shield activation and cooldown method
         if (shieldTimer >= 0 && shieldTimer <= shieldTime + shieldCooldown) 
         {
             shieldTimer += Time.deltaTime;
@@ -126,13 +137,9 @@ public class PlayerController : MonoBehaviour
             ShieldCountdownBar.fillAmount = (shieldTimer - shieldTime) / shieldCooldown;
         }
 
-        }
-        int MyFunction(int value)
-    {
-        Debug.Log("IL NUMERO" + value);
-        return value;
     }
 
+    //ANIMATION FLICKERER
     private IEnumerator FlickererRB()
     {
         Debug.Log("CoRoutineEnabled");

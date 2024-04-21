@@ -19,6 +19,8 @@ public class PlayerBullet : MonoBehaviour
 
         pauseMenu = FindObjectOfType<PauseMenu>();
     }
+
+    //PLAYER'S PROJECTILE DIRECTION
     public void SetDireciton(Vector2 direction)
     {
         _direction = direction.normalized;
@@ -33,13 +35,12 @@ public class PlayerBullet : MonoBehaviour
 
         if (isReady)
 
+        //PLAYER'S PROJECTILE MOVEMENT AND DESPAWN
         {
             Vector2 position = transform.position;
-
             position += _direction * speed * Time.deltaTime;
-
             transform.position = position;
-
+           
             Vector2 min = Camera.main.ViewportToWorldPoint(new Vector2(0, 0));
 
             Vector2 max = Camera.main.ViewportToWorldPoint(new Vector2(1, 1));
@@ -52,6 +53,8 @@ public class PlayerBullet : MonoBehaviour
             }
         }
     }
+
+    //PLAYER'S PROECTILE HITTING
     void OnTriggerEnter2D(Collider2D col)
     {
         if ((col.tag == "EnemyBulletTag"))
