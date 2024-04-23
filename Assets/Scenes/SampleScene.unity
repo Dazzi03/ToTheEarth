@@ -266,7 +266,7 @@ GameObject:
   - component: {fileID: 71101559}
   - component: {fileID: 71101558}
   m_Layer: 5
-  m_Name: Button (Legacy) 1
+  m_Name: WinButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -470,8 +470,7 @@ Transform:
   m_LocalPosition: {x: 15.25, y: 1.79, z: -1}
   m_LocalScale: {x: 1.5023017, y: 1.5621152, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 564620228}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &142486604
@@ -488,7 +487,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   meteorTime: 0.5
   minMeteorTime: 0.4
-  maxMeteorTime: 1.5
+  maxMeteorTime: 1.2
   meteorPrefab: {fileID: 710190359983906440, guid: bcaeca7e73b19204f84c578e9d18ce90, type: 3}
   pointA: {fileID: 1279918965}
   pointB: {fileID: 670907985}
@@ -587,8 +586,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1150000186}
   - {fileID: 1083095462}
+  - {fileID: 1150000186}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &270693862
@@ -620,8 +619,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1916721821}
   - {fileID: 654941296}
+  - {fileID: 1916721821}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &301165217
@@ -1398,13 +1397,13 @@ Transform:
   m_GameObject: {fileID: 564620227}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -23.723618, y: 1.6801891, z: 3105.2363}
-  m_LocalScale: {x: 0.6656453, y: 0.64015764, z: 1}
+  m_LocalPosition: {x: -20.39003, y: 4.414649, z: 3104.2363}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1279918966}
   - {fileID: 670907986}
-  m_Father: {fileID: 142486602}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &594448355
 GameObject:
@@ -1629,7 +1628,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 654941295}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1762,7 +1761,7 @@ GameObject:
   - component: {fileID: 758486429}
   - component: {fileID: 758486428}
   m_Layer: 5
-  m_Name: Button (Legacy) 2
+  m_Name: GameOverButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2031,7 +2030,7 @@ GameObject:
   - component: {fileID: 776359898}
   - component: {fileID: 776359897}
   m_Layer: 5
-  m_Name: Heart (2)
+  m_Name: Heart 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2353,7 +2352,7 @@ Transform:
   m_GameObject: {fileID: 1083095460}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 19.97695, y: 2.5702665, z: 0.13477671}
+  m_LocalPosition: {x: 19.976929, y: 2.5702512, z: 0.13477671}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3620,7 +3619,7 @@ GameObject:
   - component: {fileID: 1957276859}
   - component: {fileID: 1957276858}
   m_Layer: 5
-  m_Name: Image
+  m_Name: ShieldImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3695,7 +3694,7 @@ GameObject:
   - component: {fileID: 2023393023}
   - component: {fileID: 2023393022}
   m_Layer: 5
-  m_Name: Heart (1)
+  m_Name: Heart 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3770,7 +3769,7 @@ GameObject:
   - component: {fileID: 2101375700}
   - component: {fileID: 2101375699}
   m_Layer: 5
-  m_Name: Heart
+  m_Name: Heart 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3886,6 +3885,10 @@ PrefabInstance:
       value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 9221261662461804376, guid: 83964035ab9206e48b15a56742a752c2, type: 3}
+      propertyPath: speed
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 9221261662461804376, guid: 83964035ab9206e48b15a56742a752c2, type: 3}
       propertyPath: shieldTime
       value: 4
       objectReference: {fileID: 0}
@@ -3914,6 +3917,7 @@ SceneRoots:
   - {fileID: 304600810}
   - {fileID: 5907434974248638003}
   - {fileID: 142486602}
+  - {fileID: 564620228}
   - {fileID: 1100803871}
   - {fileID: 383044710}
   - {fileID: 307312270}
